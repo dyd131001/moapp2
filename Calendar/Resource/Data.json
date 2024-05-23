@@ -1,0 +1,58 @@
+[{
+    "title" : "일상",
+    "color" : "pink",
+    "plan" : [{
+        "startDate" : "2024-05-21",
+        "endDate" : "2024-05-21",
+        "title" : "웹프",
+        "complet": false
+    },{
+        "startDate" : "2024-05-21",
+        "endDate" : "2024-05-21",
+        "title" : "모앱프",
+        "complet": false
+    }],
+    "detailPlan" : [{
+        "startDate" : "2024-05-21",
+        "endDate" : "2024-05-21",
+        "title" : "웹프",
+        "content" : "굳"
+        "complet": false
+    },{
+        "startDate" : "2024-05-21",
+        "endDate" : "2024-05-21",
+        "title" : "웹프",
+        "content" : "굳",
+        "complet": false
+    }]
+},
+    {
+        "title" : "중요",
+        "color" : "pink",
+        "plan" : [{
+            "startDate" : "2024-05-21",
+            "endDate" : "2024-05-21",
+            "title" : "웹프",
+            "complet": false
+        },{
+            "startDate" : "2024-05-21",
+            "endDate" : "2024-05-21",
+            "title" : "모앱프",
+            "complet": false
+        }],
+        "detailPlan" : [{
+            "startDate" : "2024-05-21",
+            "endDate" : "2024-05-21",
+            "title" : "웹프",
+            "content" : "굳"
+            "complet": false
+        },{
+            "startDate" : "2024-05-21",
+            "endDate" : "2024-05-21",
+            "title" : "웹프",
+            "content" : "굳",
+            "complet": false
+        }]
+    }
+    
+]
