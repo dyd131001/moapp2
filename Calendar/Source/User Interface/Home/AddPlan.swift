@@ -8,16 +8,14 @@
 import SwiftUI
 
 struct AddPlan : View{
+    @State private var showingAddPlanSheet = false
+    
+    
     var body: some View{
         
         HStack(alignment: .center){
-            Image(systemName: "plus.circle.fill")
-                .resizable()
-                .foregroundColor(.white)
-                .frame(width: 30,height: 30)
-                .padding(.leading, 10)
-            Text("to do")
-                .foregroundColor(.gray)
+            plusSymbol
+            plusText
             Spacer()
             
         }
@@ -25,11 +23,27 @@ struct AddPlan : View{
         .background(.lightGray)
         .cornerRadius(30)
         .padding(.top,15)
+        .onTapGesture {
+                    showingAddPlanSheet = true
+                }
+                .sheet(isPresented: $showingAddPlanSheet) {
+                    AddPlanSheetView()
+                }
         
     }
 }
 
 private extension AddPlan{
+    var plusSymbol : some View {
+        Symbol("plus.circle.fill",
+               scale: .large ,color: .white)
+        .padding(.leading, 10)
+    }
+    
+    var plusText : some View {
+        Text("to do")
+            .foregroundColor(.gray)
+    }
     
 }
 

@@ -25,7 +25,8 @@ struct CalendarApp: App {
 
     var body: some Scene {
         WindowGroup {
-            Home()
+            MainTabView()
+                .environmentObject(PlanStore())
         }
         .modelContainer(sharedModelContainer)
     }

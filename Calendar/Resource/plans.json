@@ -1,0 +1,53 @@
+{
+  "plans": {
+    "categories": [
+      {
+        "title": "Work",
+        "color": "red",
+        "plans": [
+          {
+            "startDate": "2024-06-01T09:00:00Z",
+            "endDate": "2024-06-01T17:00:00Z",
+            "title": "프로젝트 회의",
+            "complete": false
+          },
+          {
+            "startDate": "2024-06-02T09:00:00Z",
+            "endDate": "2024-06-02T17:00:00Z",
+            "title": "앱 개발",
+            "complete": false
+          }
+        ]
+      },
+      {
+        "title": "Personal",
+        "color": "blue",
+        "plans": [
+          {
+            "startDate": "2024-06-03T09:00:00Z",
+            "endDate": "2024-06-03T11:00:00Z",
+            "title": "체육관 가기",
+            "complete": false
+          }
+        ]
+      }
+    ]
+  },
+  "detailPlans": {
+    "categories": [
+      {
+        "title": "Health",
+        "color": "green",
+        "detailPlans": [
+          {
+            "startDate": "2024-05-04T07:00:00Z",
+            "endDate": "2024-05-04T08:00:00Z",
+            "title": "아침 달리기",
+            "content": "5km 대운동장 달리기",
+            "complete": false
+          }
+        ]
+      }
+    ]
+  }
+}

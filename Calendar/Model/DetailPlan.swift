@@ -9,14 +9,15 @@ import Foundation
 
 struct DetailPlan: Identifiable {
     let id = UUID()
-    let startDate: String
-    let endDate: String
+    let startDate: Date
+    let endDate: Date
     let title: String
     let content: String
     var complete: Bool = false
 }
 
-extension DetailPlan: Decodable {}
-extension DetailPlan: Equatable {}
 
+
+extension DetailPlan: Equatable {}
+extension DetailPlan: Codable {}
 

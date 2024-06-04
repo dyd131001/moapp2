@@ -52,7 +52,7 @@ private extension MainTabView {
             .onAppear { UITableView.appearance().separatorStyle = .none }
     }
     var calendar: some View {
-        Calendar()
+        CalendarView()
             .tag(Tabs.calendar)
             .tabItem(image: "calendar", text: "캘린더")
             .onAppear { UITableView.appearance().separatorStyle = .none }
@@ -78,5 +78,6 @@ struct MainTabView_Previews: PreviewProvider {
     static var previews: some View {
         MainTabView()
             .accentColor(.toolBarBlue)
+            .environmentObject(PlanStore())
     }
 }

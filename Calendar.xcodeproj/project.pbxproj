@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		70AE298D2C0ED17C0037FFE5 /* CalendarGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AE298C2C0ED17C0037FFE5 /* CalendarGridView.swift */; };
+		70AE298F2C0EDAB80037FFE5 /* WeekdaysHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AE298E2C0EDAB80037FFE5 /* WeekdaysHeaderView.swift */; };
+		70AE29912C0EDAD60037FFE5 /* DayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AE29902C0EDAD60037FFE5 /* DayView.swift */; };
 		70F1F1092BFEFFDA00738728 /* CalendarApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F1F1082BFEFFDA00738728 /* CalendarApp.swift */; };
 		70F1F10B2BFEFFDA00738728 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F1F10A2BFEFFDA00738728 /* Home.swift */; };
 		70F1F10F2BFEFFDC00738728 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70F1F10E2BFEFFDC00738728 /* Assets.xcassets */; };
@@ -14,24 +17,27 @@
 		70F1F11C2BFEFFDC00738728 /* CalendarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F1F11B2BFEFFDC00738728 /* CalendarTests.swift */; };
 		70F1F1262BFEFFDC00738728 /* CalendarUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F1F1252BFEFFDC00738728 /* CalendarUITests.swift */; };
 		70F1F1282BFEFFDC00738728 /* CalendarUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F1F1272BFEFFDC00738728 /* CalendarUITestsLaunchTests.swift */; };
-		70F1F1362BFF01DD00738728 /* Data.json in Resources */ = {isa = PBXBuildFile; fileRef = 70F1F1352BFF01DD00738728 /* Data.json */; };
 		70F1F13D2BFF08DC00738728 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F1F13C2BFF08DC00738728 /* Item.swift */; };
-		70F1F13F2BFF314000738728 /* mainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F1F13E2BFF314000738728 /* mainTabView.swift */; };
+		70F1F13F2BFF314000738728 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F1F13E2BFF314000738728 /* MainTabView.swift */; };
 		70F1F1462BFF32DB00738728 /* Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F1F1452BFF32DB00738728 /* Preview.swift */; };
 		70F1F1482BFF32E700738728 /* Symbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F1F1472BFF32E700738728 /* Symbol.swift */; };
 		70F1F14A2BFF32F700738728 /* ResizedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F1F1492BFF32F700738728 /* ResizedImage.swift */; };
 		70F1F14C2BFF333F00738728 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F1F14B2BFF333F00738728 /* ColorExtension.swift */; };
 		70F1F14E2BFF335800738728 /* BundleExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F1F14D2BFF335800738728 /* BundleExtention.swift */; };
-		70F1F1502BFF338000738728 /* Calendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F1F14F2BFF337F00738728 /* Calendar.swift */; };
+		70F1F1502BFF338000738728 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F1F14F2BFF337F00738728 /* CalendarView.swift */; };
 		70F1F1522BFF339400738728 /* MyPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F1F1512BFF339400738728 /* MyPage.swift */; };
 		70F1F1552BFF9D0500738728 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F1F1542BFF9D0500738728 /* Category.swift */; };
 		70F1F1582BFF9D4700738728 /* Plan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F1F1572BFF9D4700738728 /* Plan.swift */; };
 		70F1F15A2BFF9D6700738728 /* DetailPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F1F1592BFF9D6700738728 /* DetailPlan.swift */; };
-		70F1F15C2BFF9D7700738728 /* CategoryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F1F15B2BFF9D7700738728 /* CategoryStore.swift */; };
+		70F1F15C2BFF9D7700738728 /* PlanStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F1F15B2BFF9D7700738728 /* PlanStore.swift */; };
 		70F1F15E2BFFA6BE00738728 /* AddPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F1F15D2BFFA6BE00738728 /* AddPlan.swift */; };
 		70F1F1602BFFA77C00738728 /* PlanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F1F15F2BFFA77C00738728 /* PlanView.swift */; };
 		70F1F1622BFFA80F00738728 /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F1F1612BFFA80F00738728 /* CategoryView.swift */; };
 		70F1F1642BFFA92900738728 /* PlanDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F1F1632BFFA92900738728 /* PlanDescription.swift */; };
+		70F1F1682BFFBC5F00738728 /* AddPlanSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F1F1672BFFBC5F00738728 /* AddPlanSheetView.swift */; };
+		70F1F16A2C002A3A00738728 /* AnyPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F1F1692C002A3A00738728 /* AnyPlan.swift */; };
+		70F1F16C2C002BFF00738728 /* plans.json in Resources */ = {isa = PBXBuildFile; fileRef = 70F1F16B2C002BFF00738728 /* plans.json */; };
+		70FF6B962C096D040057DBA3 /* EditCategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FF6B952C096D040057DBA3 /* EditCategoriesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +58,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		70AE298C2C0ED17C0037FFE5 /* CalendarGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarGridView.swift; sourceTree = "<group>"; };
+		70AE298E2C0EDAB80037FFE5 /* WeekdaysHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekdaysHeaderView.swift; sourceTree = "<group>"; };
+		70AE29902C0EDAD60037FFE5 /* DayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayView.swift; sourceTree = "<group>"; };
 		70F1F1052BFEFFDA00738728 /* Calendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70F1F1082BFEFFDA00738728 /* CalendarApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarApp.swift; sourceTree = "<group>"; };
 		70F1F10A2BFEFFDA00738728 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
@@ -62,24 +71,27 @@
 		70F1F1212BFEFFDC00738728 /* CalendarUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CalendarUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		70F1F1252BFEFFDC00738728 /* CalendarUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarUITests.swift; sourceTree = "<group>"; };
 		70F1F1272BFEFFDC00738728 /* CalendarUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		70F1F1352BFF01DD00738728 /* Data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Data.json; sourceTree = "<group>"; };
 		70F1F13C2BFF08DC00738728 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
-		70F1F13E2BFF314000738728 /* mainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainTabView.swift; sourceTree = "<group>"; };
+		70F1F13E2BFF314000738728 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		70F1F1452BFF32DB00738728 /* Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preview.swift; sourceTree = "<group>"; };
 		70F1F1472BFF32E700738728 /* Symbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Symbol.swift; sourceTree = "<group>"; };
 		70F1F1492BFF32F700738728 /* ResizedImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResizedImage.swift; sourceTree = "<group>"; };
 		70F1F14B2BFF333F00738728 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		70F1F14D2BFF335800738728 /* BundleExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleExtention.swift; sourceTree = "<group>"; };
-		70F1F14F2BFF337F00738728 /* Calendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calendar.swift; sourceTree = "<group>"; };
+		70F1F14F2BFF337F00738728 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		70F1F1512BFF339400738728 /* MyPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPage.swift; sourceTree = "<group>"; };
 		70F1F1542BFF9D0500738728 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		70F1F1572BFF9D4700738728 /* Plan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plan.swift; sourceTree = "<group>"; };
 		70F1F1592BFF9D6700738728 /* DetailPlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPlan.swift; sourceTree = "<group>"; };
-		70F1F15B2BFF9D7700738728 /* CategoryStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryStore.swift; sourceTree = "<group>"; };
+		70F1F15B2BFF9D7700738728 /* PlanStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanStore.swift; sourceTree = "<group>"; };
 		70F1F15D2BFFA6BE00738728 /* AddPlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlan.swift; sourceTree = "<group>"; };
 		70F1F15F2BFFA77C00738728 /* PlanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanView.swift; sourceTree = "<group>"; };
 		70F1F1612BFFA80F00738728 /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
 		70F1F1632BFFA92900738728 /* PlanDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanDescription.swift; sourceTree = "<group>"; };
+		70F1F1672BFFBC5F00738728 /* AddPlanSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlanSheetView.swift; sourceTree = "<group>"; };
+		70F1F1692C002A3A00738728 /* AnyPlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyPlan.swift; sourceTree = "<group>"; };
+		70F1F16B2C002BFF00738728 /* plans.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = plans.json; sourceTree = "<group>"; };
+		70FF6B952C096D040057DBA3 /* EditCategoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCategoriesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,7 +189,7 @@
 		70F1F1382BFF079E00738728 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				70F1F1352BFF01DD00738728 /* Data.json */,
+				70F1F16B2C002BFF00738728 /* plans.json */,
 				70F1F10E2BFEFFDC00738728 /* Assets.xcassets */,
 			);
 			path = Resource;
@@ -197,7 +209,7 @@
 				70F1F1412BFF31C400738728 /* MyPage */,
 				70F1F1402BFF31B000738728 /* Calendar */,
 				70F1F13B2BFF07DA00738728 /* Home */,
-				70F1F13E2BFF314000738728 /* mainTabView.swift */,
+				70F1F13E2BFF314000738728 /* MainTabView.swift */,
 			);
 			path = "User Interface";
 			sourceTree = "<group>";
@@ -210,6 +222,8 @@
 				70F1F15F2BFFA77C00738728 /* PlanView.swift */,
 				70F1F1612BFFA80F00738728 /* CategoryView.swift */,
 				70F1F1632BFFA92900738728 /* PlanDescription.swift */,
+				70F1F1672BFFBC5F00738728 /* AddPlanSheetView.swift */,
+				70FF6B952C096D040057DBA3 /* EditCategoriesView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -217,7 +231,10 @@
 		70F1F1402BFF31B000738728 /* Calendar */ = {
 			isa = PBXGroup;
 			children = (
-				70F1F14F2BFF337F00738728 /* Calendar.swift */,
+				70F1F14F2BFF337F00738728 /* CalendarView.swift */,
+				70AE298C2C0ED17C0037FFE5 /* CalendarGridView.swift */,
+				70AE298E2C0EDAB80037FFE5 /* WeekdaysHeaderView.swift */,
+				70AE29902C0EDAD60037FFE5 /* DayView.swift */,
 			);
 			path = Calendar;
 			sourceTree = "<group>";
@@ -264,7 +281,8 @@
 				70F1F1542BFF9D0500738728 /* Category.swift */,
 				70F1F1572BFF9D4700738728 /* Plan.swift */,
 				70F1F1592BFF9D6700738728 /* DetailPlan.swift */,
-				70F1F15B2BFF9D7700738728 /* CategoryStore.swift */,
+				70F1F15B2BFF9D7700738728 /* PlanStore.swift */,
+				70F1F1692C002A3A00738728 /* AnyPlan.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -375,7 +393,7 @@
 			files = (
 				70F1F1122BFEFFDC00738728 /* Preview Assets.xcassets in Resources */,
 				70F1F10F2BFEFFDC00738728 /* Assets.xcassets in Resources */,
-				70F1F1362BFF01DD00738728 /* Data.json in Resources */,
+				70F1F16C2C002BFF00738728 /* plans.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,25 +418,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				70F1F15C2BFF9D7700738728 /* CategoryStore.swift in Sources */,
+				70F1F15C2BFF9D7700738728 /* PlanStore.swift in Sources */,
+				70AE29912C0EDAD60037FFE5 /* DayView.swift in Sources */,
+				70F1F1682BFFBC5F00738728 /* AddPlanSheetView.swift in Sources */,
 				70F1F10B2BFEFFDA00738728 /* Home.swift in Sources */,
 				70F1F1522BFF339400738728 /* MyPage.swift in Sources */,
 				70F1F14A2BFF32F700738728 /* ResizedImage.swift in Sources */,
+				70F1F16A2C002A3A00738728 /* AnyPlan.swift in Sources */,
 				70F1F1602BFFA77C00738728 /* PlanView.swift in Sources */,
 				70F1F13D2BFF08DC00738728 /* Item.swift in Sources */,
 				70F1F1582BFF9D4700738728 /* Plan.swift in Sources */,
+				70AE298D2C0ED17C0037FFE5 /* CalendarGridView.swift in Sources */,
 				70F1F15A2BFF9D6700738728 /* DetailPlan.swift in Sources */,
 				70F1F1622BFFA80F00738728 /* CategoryView.swift in Sources */,
 				70F1F14C2BFF333F00738728 /* ColorExtension.swift in Sources */,
+				70FF6B962C096D040057DBA3 /* EditCategoriesView.swift in Sources */,
 				70F1F1462BFF32DB00738728 /* Preview.swift in Sources */,
 				70F1F1642BFFA92900738728 /* PlanDescription.swift in Sources */,
 				70F1F1092BFEFFDA00738728 /* CalendarApp.swift in Sources */,
 				70F1F1552BFF9D0500738728 /* Category.swift in Sources */,
-				70F1F13F2BFF314000738728 /* mainTabView.swift in Sources */,
+				70F1F13F2BFF314000738728 /* MainTabView.swift in Sources */,
 				70F1F15E2BFFA6BE00738728 /* AddPlan.swift in Sources */,
+				70AE298F2C0EDAB80037FFE5 /* WeekdaysHeaderView.swift in Sources */,
 				70F1F14E2BFF335800738728 /* BundleExtention.swift in Sources */,
 				70F1F1482BFF32E700738728 /* Symbol.swift in Sources */,
-				70F1F1502BFF338000738728 /* Calendar.swift in Sources */,
+				70F1F1502BFF338000738728 /* CalendarView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

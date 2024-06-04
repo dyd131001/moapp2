@@ -8,41 +8,68 @@
 import SwiftUI
 
 struct CategoryView: View {
+
+    @Binding var isDetail:Bool
+    @Binding  var categories : [Category]
+    @State private var showEditCategories: Bool = false
     
     var body: some View {
         HStack(alignment: .center){
             ScrollView(.horizontal){
-                Button(action: {
-                    //to do
-                }) {
-                    Text("취미")
-                        .font(.custom("tag", size: 10))
-                        .padding(.horizontal,8)
-                        .padding(.vertical,5)
-                        .background(.pink)
-                        .foregroundColor(.white)
-                        .cornerRadius(20)
+                HStack{
+                    planCategory
                 }
-                .padding(.leading,10)
             }
             .frame(width: 300,height: 22, alignment: .leading)
-            
-            
+            .padding(.leading,10)
             Spacer()
-            Button(action: {
-                //to do
-            }){
-                Image(systemName: "pencil.line")
-                    .resizable()
-                    .frame(width: 15, height: 15)
-                    .foregroundColor(.black)
-            }
-            .padding(.trailing, 20)
+            editSymbol
+                .padding(.trailing,30)
             
         }
     }
+    
+    
 }
 
-#Preview {
-    CategoryView()
+private extension CategoryView{
+    var editSymbol : some View {
+        Symbol("pencil.line",
+               scale: .medium ,color: .black)
+        .onTapGesture {
+                    showEditCategories = true
+                }
+                .sheet(isPresented: $showEditCategories) {
+                    EditCategoriesView()
+                }
+    }
+
+    
+    var planCategory : some View {
+        ForEach(categories) { category in
+            Text(category.title)
+                .font(.custom("tag", size: 10))
+                .padding(.horizontal,8)
+                .padding(.vertical,5)
+                .background(.pink)
+                .foregroundColor(.white)
+                .cornerRadius(20)
+                .onTapGesture {
+                        }
+
+        }
+    }
+    
+}
+
+
+
+
+
+
+struct CategoryView_Previews: PreviewProvider {
+    static var previews: some View {
+        let sampleCategory = Category(title: "취미", color: "red")
+        return CategoryView(isDetail: .constant(true), categories: .constant([sampleCategory]))
+    }
 }

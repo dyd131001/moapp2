@@ -11,10 +11,15 @@ struct Category: Identifiable {
     let id = UUID()
     let title: String
     let color: String
-    var plan: [Plan]
-    var detailPlan: [DetailPlan]
+
 }
 
+let CategorySample = [
+    Category(title: "일상", color: "pink")
+]
 
-extension Category: Decodable {}
+
+extension Category: Codable {}
 extension Category: Equatable {}
+extension Category: Hashable {}
+

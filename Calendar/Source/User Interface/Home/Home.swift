@@ -9,6 +9,7 @@ import SwiftUI
 import SwiftData
 
 struct Home: View {
+    @EnvironmentObject var planStore: PlanStore
 
     var body: some View {
 
@@ -44,7 +45,7 @@ private extension Home{
                 .font(.largeTitle)
                 .padding(.leading,10)
             
-            Text("24.05.10")
+            Text(currentDateString())
                 .font(.headline)
                 .foregroundColor(.gray)
                 .padding(.leading,10)
@@ -52,8 +53,17 @@ private extension Home{
         }
         
     }
+    
+    func currentDateString() -> String {
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy.MM.dd"
+            return formatter.string(from: Date())
+        }
+                 
+    
 }
 
 #Preview {
     Home()
+        .environmentObject(PlanStore())
 }

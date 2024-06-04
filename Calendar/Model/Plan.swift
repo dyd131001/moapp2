@@ -9,12 +9,16 @@ import Foundation
 
 struct Plan: Identifiable {
     let id = UUID()
-    let startDate: String
-    let endDate: String
+    let startDate: Date
+    let endDate: Date
     let title: String
     var complete: Bool = false
 }
 
+let planSample = [
+    Plan(startDate: Date(), endDate: Date(), title: "모앱프"),
+    Plan(startDate: Date(), endDate: Date(), title: "웹프")
+]
 
-extension Plan: Decodable {}
 extension Plan: Equatable {}
+extension Plan: Codable {}
