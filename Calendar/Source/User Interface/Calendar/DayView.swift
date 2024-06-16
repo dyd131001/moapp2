@@ -11,6 +11,7 @@ struct DayView: View {
     let day: Date
     let plans: [Category: [AnyPlan]]
     let dateFormatter: DateFormatter
+    @State private var showEdit: Bool = false
     
     var body: some View {
         VStack(alignment: .center) {
@@ -23,27 +24,64 @@ struct DayView: View {
                 ForEach(plans[category] ?? [], id: \.id) { anyPlan in
                     switch anyPlan {
                     case .plan(let plan):
-                        Text(plan.title)
-                            .font(.caption2)
-                            .foregroundColor(.primary)
-                            .padding(.top, 1)
-                            .onTapGesture {
-                                // Plan 클릭 이벤트
-                                print("Plan tapped: \(plan.title)")
-                            }
+                        VStack{
+                            Text(category.title)
+                                .font(.custom("tag", size: 5))
+                                .padding(.horizontal,5)
+                                .padding(.vertical,5)
+                                .background(.pink)
+                                .foregroundColor(.white)
+                                .cornerRadius(20)
+                            
+                            Text(plan.title)
+                                .font(.caption2)
+                                .foregroundColor(.primary)
+                                .padding(.top, 1)
+             
+                        }
                     case .detailPlan(let detailPlan):
-                        Text(detailPlan.title)
-                            .font(.caption2)
-                            .foregroundColor(.primary)
-                            .padding(.top, 1)
-                            .onTapGesture {
-                                // DetailPlan 클릭 이벤트
-                                print("DetailPlan tapped: \(detailPlan.title)")
-                            }
+                        VStack{
+                            Text(category.title)
+                                .font(.custom("tag", size: 10))
+                                .padding(.horizontal,8)
+                                .padding(.vertical,8)
+                                .background(.pink)
+                                .foregroundColor(.white)
+                                .cornerRadius(20)
+                            
+                            Text(detailPlan.title)
+                                .font(.caption2)
+                                .foregroundColor(.primary)
+                                .padding(.top, 1)
+               
+                        }
+                        
+                        
                     }
+                }
+                .onTapGesture {
+                            showEdit = true
+                        }
+                .sheet(isPresented: $showEdit){
+                    PlanDescription(isDetail: false , selectedDate: .constant(day), plans: plans, isPopup: true )
+                        .clearModalBackground()
+                
+                    
                 }
             }
         }
         .frame(minWidth: 40, minHeight: 120, alignment: .top)
+        .onTapGesture {
+                    showEdit = true
+                }
+        .sheet(isPresented: $showEdit){
+            PlanDescription(isDetail: false , selectedDate: .constant(day), plans: plans , isPopup: true)
+                .clearModalBackground()
+        
+            
+        }
     }
+    
+    
+
 }

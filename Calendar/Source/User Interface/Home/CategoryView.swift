@@ -41,6 +41,8 @@ private extension CategoryView{
                 }
                 .sheet(isPresented: $showEditCategories) {
                     EditCategoriesView()
+                        .clearModalBackground()
+                    
                 }
     }
 

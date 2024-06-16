@@ -10,27 +10,69 @@ import SwiftUI
 struct PlanView: View {
     let plan: AnyPlan
     let category : Category
+    @State private var isEditSymbolChecked = false
+    @EnvironmentObject var planStore: PlanStore // PlanStore 주입
+    @GestureState private var isLongPressing = false
+    @State private var isShowingDeleteButton = false
+    
     var body: some View {
-        // 계획 뷰
-        HStack(alignment: .center){
-            planCategory
-            planContent
-            Spacer()
-            editSymbol
+        ZStack{
+            HStack(alignment: .center){
+                planCategory
+                if isEditSymbolChecked {
+                    planCheckContent
+                } else {
+                    planContent
+                }
+                Spacer()
+                if isEditSymbolChecked {
+                    editCheckSymbol
+                } else {
+                    editSymbol
+                }
+            }
+            .frame(width: 300,height: 50 , alignment: .center)
+            .background(.lightGray)
+            .cornerRadius(30)
+            .padding(.top,15)
+            .contextMenu {
+                Button(action: {
+                    if case let .plan(plan) = plan {
+                        planStore.deletePlan(plan, for: category)
+                    } else if case let .detailPlan(detailPlan) = plan {
+                        planStore.deleteDetailPlan(detailPlan, for: category)
+                    }
+                }) {
+                    Text("일정 제거")
+                    Symbol("trash")
+                }
+            }
+            
             
         }
-        .frame(width: 300,height: 50 , alignment: .center)
-        .background(.lightGray)
-        .cornerRadius(30)
-        .padding(.top,15)
+        
     }
+    
 }
+
 
 private extension PlanView{
     var editSymbol : some View {
         Symbol("square",
                scale: .large ,color: .white)
         .padding(.trailing,15)
+        .onTapGesture {
+            isEditSymbolChecked.toggle()
+        }
+    }
+    
+    var editCheckSymbol : some View {
+        Symbol("checkmark.square.fill",
+               scale: .large ,color: .white)
+        .padding(.trailing,15)
+        .onTapGesture {
+            isEditSymbolChecked.toggle()
+        }
     }
     
     var planContent : some View {
@@ -43,6 +85,20 @@ private extension PlanView{
             Text(detailPlan.title)
                 .foregroundColor(.black)
         }
+        
+    }
+    
+    var planCheckContent : some View {
+        
+        switch plan {
+        case .plan(let plan):
+            Text(plan.title)
+                .foregroundColor(.white)
+        case .detailPlan(let detailPlan):
+            Text(detailPlan.title)
+                .foregroundColor(.white)
+        }
+        
     }
     
     var planCategory : some View {

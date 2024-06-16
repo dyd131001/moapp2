@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7057DA902C12E91F00E3E596 /* ClearBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7057DA8F2C12E91F00E3E596 /* ClearBackgroundView.swift */; };
 		70AE298D2C0ED17C0037FFE5 /* CalendarGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AE298C2C0ED17C0037FFE5 /* CalendarGridView.swift */; };
 		70AE298F2C0EDAB80037FFE5 /* WeekdaysHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AE298E2C0EDAB80037FFE5 /* WeekdaysHeaderView.swift */; };
 		70AE29912C0EDAD60037FFE5 /* DayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AE29902C0EDAD60037FFE5 /* DayView.swift */; };
@@ -58,6 +59,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7057DA8F2C12E91F00E3E596 /* ClearBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearBackgroundView.swift; sourceTree = "<group>"; };
 		70AE298C2C0ED17C0037FFE5 /* CalendarGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarGridView.swift; sourceTree = "<group>"; };
 		70AE298E2C0EDAB80037FFE5 /* WeekdaysHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekdaysHeaderView.swift; sourceTree = "<group>"; };
 		70AE29902C0EDAD60037FFE5 /* DayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayView.swift; sourceTree = "<group>"; };
@@ -262,6 +264,7 @@
 				70F1F1452BFF32DB00738728 /* Preview.swift */,
 				70F1F1472BFF32E700738728 /* Symbol.swift */,
 				70F1F1492BFF32F700738728 /* ResizedImage.swift */,
+				7057DA8F2C12E91F00E3E596 /* ClearBackgroundView.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -442,6 +445,7 @@
 				70AE298F2C0EDAB80037FFE5 /* WeekdaysHeaderView.swift in Sources */,
 				70F1F14E2BFF335800738728 /* BundleExtention.swift in Sources */,
 				70F1F1482BFF32E700738728 /* Symbol.swift in Sources */,
+				7057DA902C12E91F00E3E596 /* ClearBackgroundView.swift in Sources */,
 				70F1F1502BFF338000738728 /* CalendarView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

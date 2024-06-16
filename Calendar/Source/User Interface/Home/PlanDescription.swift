@@ -8,15 +8,21 @@
 import SwiftUI
 
 struct PlanDescription: View {
+    @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject private var planStore : PlanStore
+    @Binding var selectedDate: Date
     @State var isDetail:Bool
+    let plans: [Category: [AnyPlan]]
     var title:String
-    @State var plans: [Category: [AnyPlan]] = [:]
-
-    init(isDetail:Bool){
+    var isPopup:Bool
+    
+    
+    init(isDetail: Bool, selectedDate: Binding<Date>, plans: [Category: [AnyPlan]] , isPopup:Bool = false) {
+        self._selectedDate = selectedDate
         self.isDetail = isDetail
         self.title = isDetail ? "세부 계획" : "간단 계획"
-        
+        self.plans = plans
+        self.isPopup = isPopup
     }
     
     
@@ -25,20 +31,24 @@ struct PlanDescription: View {
         
         return VStack(alignment: .center){
             
-            titleView
+            if(isPopup){
+                popupTitleView
+            }
+            else{
+                titleView
+            }
             // 카테고리 전시 및 편집
             CategoryView(isDetail: $isDetail, categories: $planStore.categories)
             // 계획 뷰
-            ForEach(planStore.categories) { category in
-                if let categoryPlans = plans[category] {
-                    ForEach(categoryPlans) { anyPlan in
-                        PlanView(plan: anyPlan, category: category)
-                    }
+            ForEach(plans.keys.sorted(by: { $0.title < $1.title })) { category in
+                ForEach(plans[category] ?? []) { anyPlan in
+                    PlanView(plan: anyPlan, category: category)
                 }
             }
             // 계획 추가 뷰
             AddPlan()
             Spacer()
+                .frame(maxWidth: 350, maxHeight: 100)
             
             
         }
@@ -47,22 +57,15 @@ struct PlanDescription: View {
         .cornerRadius(30)
         .shadow(color: Color.primary.opacity(0.1), radius: 1, x: 2, y: 2)
         .padding(.bottom, 30)
-        .onAppear {
-            print("loadPlans 실행")
-            print("\(self.plans)")
-            print("\(self.planStore.categories)")
-            
-            loadPlans()
-        }
+        
+        
     }
     
-    private func loadPlans() {
-        if isDetail {
-            self.plans = planStore.detailPlans.mapValues { $0.map { AnyPlan.detailPlan($0) } }
-        } else {
-            self.plans = planStore.plans.mapValues { $0.map { AnyPlan.plan($0) } }
-        }
-    }
+    
+    
+    
+    
+    
     
     
 }
@@ -75,11 +78,36 @@ private extension PlanDescription{
             .padding(.top,10)
             .padding(.leading, 20)
             .frame(maxWidth: .infinity,alignment:.leading)
+        
+        
     }
-}
-#Preview {
-    PlanDescription(isDetail: true)
-        .environmentObject(PlanStore())
     
+    
+    var popupTitleView : some View {
+        
+        HStack{
+            Text(self.title)
+                .font(.title)
+                .bold()
+                .padding(.top,10)
+                .padding(.leading, 20)
+            Spacer()
+            Symbol("xmark.circle.fill")
+                .padding(.trailing,20)
+                .onTapGesture {
+                    presentationMode.wrappedValue.dismiss()
+                }
+        }
+        
+        
+        
+    }
+    
+    
+}
+
+#Preview {
+    PlanDescription(isDetail: true, selectedDate: .constant(Date()),plans: PlanStore().getAllPlans(for: Date()))
+        .environmentObject(PlanStore())
 }
 

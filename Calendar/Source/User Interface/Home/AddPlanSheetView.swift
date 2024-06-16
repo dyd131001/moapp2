@@ -21,7 +21,7 @@ struct AddPlanSheetView: View {
             Form {
                 Section(header: Text("카테고리")) {
                     Picker("카테고리를 선택하세요", selection: $selectedCategory) {
-                        ForEach(planStore.plans.keys.sorted(by: { $0.title < $1.title }), id: \.self) { category in
+                        ForEach(planStore.categories, id: \.self) { category in
                             Text(category.title).tag(category as Category?)
                         }
                     }
@@ -33,7 +33,6 @@ struct AddPlanSheetView: View {
                     DatePicker("날짜", selection: $planDate, displayedComponents: .date)
                 }
             }
-            .navigationTitle("계획 추가")
             .navigationBarItems(leading: Button("Cancel") {
                 presentationMode.wrappedValue.dismiss()
             }, trailing: Button("Save") {

@@ -20,7 +20,10 @@ final class PlanStore: ObservableObject {
     private let detailPlansKey = "detailPlans"
     
     init() {
-        testLoadPlans()
+        //testLoadPlans()
+        loadPlans()
+        loadDetailPlans()
+        loadCategories()
     }
     
     
@@ -75,6 +78,15 @@ extension PlanStore {
                 let decoder = JSONDecoder()
                 if let decoded = try? decoder.decode([Category : [Plan]].self, from: data) {
                     self.plans = decoded
+                }
+            }
+        }
+    
+    func loadDetailPlans() {
+            if let data = userDefaults.data(forKey: detailPlansKey) {
+                let decoder = JSONDecoder()
+                if let decoded = try? decoder.decode([Category : [DetailPlan]].self, from: data) {
+                    self.detailPlans = decoded
                 }
             }
         }
@@ -220,28 +232,65 @@ extension PlanStore {
         var allPlans: [Category  : [AnyPlan]] = [:]
         
         for (category, plans) in plans {
-                    for plan in plans {
-                        if calendar.isDate(plan.startDate, inSameDayAs: date) || calendar.isDate(plan.endDate, inSameDayAs: date) {
-                            if allPlans[category] == nil {
-                                allPlans[category] = []
-                            }
-                            allPlans[category]?.append(.plan(plan))
-                        }
+            for plan in plans {
+                if calendar.isDate(plan.startDate, inSameDayAs: date){
+                    if allPlans[category] == nil {
+                        allPlans[category] = []
                     }
+                    allPlans[category]?.append(.plan(plan))
                 }
-                
-                for (category, detailPlans) in detailPlans {
-                    for detailPlan in detailPlans {
-                        if calendar.isDate(detailPlan.startDate, inSameDayAs: date) || calendar.isDate(detailPlan.endDate, inSameDayAs: date) {
-                            if allPlans[category] == nil {
-                                allPlans[category] = []
-                            }
-                            allPlans[category]?.append(.detailPlan(detailPlan))
-                        }
+            }
+        }
+        
+        for (category, detailPlans) in detailPlans {
+            for detailPlan in detailPlans {
+                if calendar.isDate(detailPlan.startDate, inSameDayAs: date)  {
+                    if allPlans[category] == nil {
+                        allPlans[category] = []
                     }
+                    allPlans[category]?.append(.detailPlan(detailPlan))
                 }
+            }
+        }
         
         return allPlans
     }
 }
 
+extension PlanStore {
+    func getPlans(for date: Date) -> [Category  : [AnyPlan]] {
+        let calendar = Calendar.current
+        var allPlans: [Category  : [AnyPlan]] = [:]
+        
+        for (category, plans) in plans {
+            for plan in plans {
+                if calendar.isDate(plan.startDate, inSameDayAs: date){
+                    if allPlans[category] == nil {
+                        allPlans[category] = []
+                    }
+                    allPlans[category]?.append(.plan(plan))
+                }
+            }
+        }
+        return allPlans
+    }
+    
+    func getDetailPlans(for date: Date) -> [Category  : [AnyPlan]] {
+        let calendar = Calendar.current
+        var allPlans: [Category  : [AnyPlan]] = [:]
+        
+        for (category, detailPlans) in detailPlans {
+            for detailPlan in detailPlans {
+                if calendar.isDate(detailPlan.startDate, inSameDayAs: date)  {
+                    if allPlans[category] == nil {
+                        allPlans[category] = []
+                    }
+                    allPlans[category]?.append(.detailPlan(detailPlan))
+                }
+            }
+        }
+        
+        return allPlans
+    }
+        
+}

@@ -20,7 +20,7 @@ struct MainTabView: View {
             Group {
                 home
                 calendar
-                myPage
+//                myPage
             }
             .accentColor(.toolBarBlue)
         }
@@ -58,11 +58,11 @@ private extension MainTabView {
             .onAppear { UITableView.appearance().separatorStyle = .none }
     }
     
-    var myPage: some View {
-        Text("마이페이지") // 임시 화면
-            .tag(Tabs.myPage)
-            .tabItem(image: "person", text: "마이페이지")
-    }
+//    var myPage: some View {
+//        Text("마이페이지") // 임시 화면
+//            .tag(Tabs.myPage)
+//            .tabItem(image: "person", text: "마이페이지")
+//    }
     var edges: Edge.Set {
         if #available(iOS 13.4, *) {
             return .init() // create an empty option set

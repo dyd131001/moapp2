@@ -20,3 +20,5 @@ enum AnyPlan: Identifiable {
         }
     }
 }
+
+extension AnyPlan: Equatable {}

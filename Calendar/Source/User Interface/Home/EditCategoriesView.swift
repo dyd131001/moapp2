@@ -39,10 +39,20 @@ struct EditCategoriesView: View {
     
     // 카테고리 편집 제목
     private var categoryTitle: some View {
-        Text("카테고리 편집")
-            .font(.headline)
-            .foregroundColor(.black)
-            .padding()
+        HStack{
+            Spacer()
+            Text("카테고리 편집")
+                .font(.headline)
+                .foregroundColor(.black)
+                .padding()
+                .padding(.leading,20)
+            Spacer()
+            Symbol("xmark.circle.fill")
+                .padding(.trailing,20)
+                .onTapGesture {
+                    presentationMode.wrappedValue.dismiss()
+                }
+        }
     }
     
     // 카테고리 목록
