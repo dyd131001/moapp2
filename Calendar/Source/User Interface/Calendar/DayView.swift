@@ -24,64 +24,24 @@ struct DayView: View {
                 ForEach(plans[category] ?? [], id: \.id) { anyPlan in
                     switch anyPlan {
                     case .plan(let plan):
-                        VStack{
-                            Text(category.title)
-                                .font(.custom("tag", size: 5))
-                                .padding(.horizontal,5)
-                                .padding(.vertical,5)
-                                .background(.pink)
-                                .foregroundColor(.white)
-                                .cornerRadius(20)
-                            
-                            Text(plan.title)
-                                .font(.caption2)
-                                .foregroundColor(.primary)
-                                .padding(.top, 1)
-             
-                        }
+                        DayPlanView(category: category, title: plan.title, isComplete: plan.complete)
                     case .detailPlan(let detailPlan):
-                        VStack{
-                            Text(category.title)
-                                .font(.custom("tag", size: 10))
-                                .padding(.horizontal,8)
-                                .padding(.vertical,8)
-                                .background(.pink)
-                                .foregroundColor(.white)
-                                .cornerRadius(20)
-                            
-                            Text(detailPlan.title)
-                                .font(.caption2)
-                                .foregroundColor(.primary)
-                                .padding(.top, 1)
-               
-                        }
-                        
-                        
+                        DayPlanView(category: category, title: detailPlan.title, isComplete: detailPlan.complete)
                     }
-                }
-                .onTapGesture {
-                            showEdit = true
-                        }
-                .sheet(isPresented: $showEdit){
-                    PlanDescription(isDetail: false , selectedDate: .constant(day), plans: plans, isPopup: true )
-                        .clearModalBackground()
-                
-                    
                 }
             }
         }
         .frame(minWidth: 40, minHeight: 120, alignment: .top)
         .onTapGesture {
-                    showEdit = true
-                }
+            showEdit = true
+        }
         .sheet(isPresented: $showEdit){
-            PlanDescription(isDetail: false , selectedDate: .constant(day), plans: plans , isPopup: true)
+            PlanDescription(isDetail: false , selectedDate: .constant(day), plans: plans, isPopup: true )
                 .clearModalBackground()
-        
-            
         }
     }
     
     
-
+    
+    
 }

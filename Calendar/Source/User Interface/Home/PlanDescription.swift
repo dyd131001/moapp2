@@ -21,6 +21,9 @@ struct PlanDescription: View {
         self._selectedDate = selectedDate
         self.isDetail = isDetail
         self.title = isDetail ? "세부 계획" : "간단 계획"
+        if isPopup {
+            self.title = "계획"
+        }
         self.plans = plans
         self.isPopup = isPopup
     }
@@ -46,7 +49,7 @@ struct PlanDescription: View {
                 }
             }
             // 계획 추가 뷰
-            AddPlan()
+            AddPlan(isDetail: $isDetail)
             Spacer()
                 .frame(maxWidth: 350, maxHeight: 100)
             

@@ -37,9 +37,11 @@ struct AddPlanSheetView: View {
                 presentationMode.wrappedValue.dismiss()
             }, trailing: Button("Save") {
                 if let selectedCategory = selectedCategory {
-                    let newPlan = Plan(startDate: planDate, endDate: planDate, title: planTitle)
+                    let newPlan = DetailPlan(startDate: planDate, endDate: planDate, title: planTitle,
+                        content: planDescription
+                    )
                     
-                    planStore.addPlan(newPlan, to: selectedCategory)
+                    planStore.addDetailPlan(newPlan, to: selectedCategory)
                     presentationMode.wrappedValue.dismiss()
                 }
             })

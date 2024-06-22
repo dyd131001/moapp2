@@ -16,30 +16,32 @@ struct Home: View {
 
     
     var body: some View {
-        VStack{
-            homeTitle
-            
-            ScrollView(.vertical){
+        NavigationView{
+            VStack{
+                homeTitle
                 
-                VStack(alignment: .leading){
+                ScrollView(.vertical){
                     
-                    // 간단 계획 뷰
-                    PlanDescription(isDetail: false , selectedDate: $selectedDate, plans: loadPlans(for: selectedDate))
-                    
-                    // 세부 계획
-                    PlanDescription(isDetail: true,
-                                    selectedDate: $selectedDate,
-                                    plans: loadDetailPlans(for: selectedDate)
-                    )
-                    
-                    Spacer()
+                    VStack(alignment: .leading){
+                        
+                        // 간단 계획 뷰
+                        PlanDescription(isDetail: false , selectedDate: $selectedDate, plans: loadPlans(for: selectedDate))
+                        
+                        // 세부 계획
+                        PlanDescription(isDetail: true,
+                                        selectedDate: $selectedDate,
+                                        plans: loadDetailPlans(for: selectedDate)
+                        )
+                        
+                        Spacer()
+                    }
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
+                
             }
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            
+            .background(.backgroundBlue)
         }
-        .background(.backgroundBlue)
         
     }
     

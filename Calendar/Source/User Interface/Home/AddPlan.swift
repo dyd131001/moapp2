@@ -9,6 +9,7 @@ import SwiftUI
 
 struct AddPlan : View{
     @State private var showingAddPlanSheet = false
+    @Binding var isDetail:Bool
     
     
     var body: some View{
@@ -27,10 +28,18 @@ struct AddPlan : View{
                     showingAddPlanSheet = true
                 }
                 .sheet(isPresented: $showingAddPlanSheet) {
-                    AddPlanSheetView()
+                    
+                    if isDetail{
+                        AddPlanSheetView()
+                    } else {
+                        AddPlanPopupView()
+                            .clearModalBackground()
+                    }
+                    
                 }
         
     }
+    
 }
 
 private extension AddPlan{
@@ -52,6 +61,6 @@ private extension AddPlan{
 struct AddPlan_Preview: PreviewProvider {
     static var previews: some View {
         
-        AddPlan()
+        AddPlan(isDetail: .constant(true))
     }
 }

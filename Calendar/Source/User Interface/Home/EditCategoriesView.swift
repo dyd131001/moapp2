@@ -16,11 +16,10 @@ struct EditCategoriesView: View {
             categoryTitle // 카테고리 편집 제목
             Spacer()
             categoryList // 카테고리 목록
-            Spacer()
             categoryAdd // 새 카테고리 추가
             Spacer()
         }
-        .frame(width: 350, height: 250)
+        .frame(width: 350, height: 190)
         .background(.lightBlue)
         .cornerRadius(20)
         .shadow(radius: 10)
@@ -58,12 +57,12 @@ struct EditCategoriesView: View {
     // 카테고리 목록
     private var categoryList: some View {
         ScrollView(.horizontal, showsIndicators: false) {
-            HStack(spacing: 20) {
+            HStack() {
                 ForEach(planStore.categories) { category in
                     CategoryItemView(category: category, onDelete: deleteCategory)
                 }
             }
-            .padding()
+            .padding(.leading,10)
         }
     }
     
@@ -72,15 +71,20 @@ struct EditCategoriesView: View {
         HStack {
             TextField("새 카테고리 이름", text: $newCategoryTitle)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
+                .frame(width: 250)
                 .padding(.leading, 10)
             
-            Button(action: addCategory) {
-                Text("추가")
-                    .foregroundColor(.white)
-                    .padding()
-                    .background(Color.blue)
-                    .cornerRadius(10)
-            }
+            
+            Text("추가")
+                .foregroundColor(.white)
+                .padding(.horizontal,10)
+                .padding(.vertical,5)
+                .background(Color.blue)
+                .cornerRadius(10)
+                .onTapGesture {
+                    addCategory()
+                }
+            
         }
         .frame(height: 44)
     }
